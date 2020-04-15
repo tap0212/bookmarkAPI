@@ -11,6 +11,7 @@ router.get('/tags', getAllTags)
 router.post('/create/tag', CreateTag);
 //Delete a Tag
 router.delete('/remove/tag/:tagId', DeleteTag)
+//AddATag
 
 
 module.exports  = router;

@@ -18,10 +18,11 @@ const bookmarkSchema = new mongoose.Schema({
         trim: true,
         required: true
     },
-    // tags: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Tag"
-    // }]
+    tags: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Tag"
+    }]
 }, {timestamps: true})
+
 
 module.exports = mongoose.model("Bookmark", bookmarkSchema)
