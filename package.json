@@ -4,7 +4,7 @@
   "description": "This is a simplple Bookmark API",
   "main": "index.js",
   "scripts": {
-    "start": "npm index.js"
+    
   },
   "author": "tap0212",
   "license": "ISC",
