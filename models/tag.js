@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const {ObjectId} = mongoose.Schema;
+const unixTimestamp = require('mongoose-unix-timestamp');
 
 const tagSchema = new mongoose.Schema({
     title: {
@@ -8,6 +8,8 @@ const tagSchema = new mongoose.Schema({
         required: true,
         unique:true
     }
-}, {timestamps: true})
+})
+
+tagSchema.plugin(unixTimestamp)
 
 module.exports = mongoose.model("Tag", tagSchema)

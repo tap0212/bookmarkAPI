@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const unixTimestamp = require('mongoose-unix-timestamp');
 
 const bookmarkSchema = new mongoose.Schema({
     link: {
@@ -21,7 +22,10 @@ const bookmarkSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref:"Tag"
     }]
-}, {timestamps: true})
+})
+
+bookmarkSchema.plugin(unixTimestamp);
+
 
 
 module.exports = mongoose.model("Bookmark", bookmarkSchema)

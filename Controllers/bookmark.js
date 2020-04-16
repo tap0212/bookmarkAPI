@@ -16,27 +16,31 @@ exports.getBookmarkById = (req,res,next,id) => {
 }
 //getAllBookmarks
 exports.getAllBookmarks = (req,res) => {
-    Bookmark.find().exec((err, bookmarks) => {
-        if(err) {
-            return res.status(400).json({
-                error: "No Categories Found"
+    Bookmark.find()
+    .exec()
+        .then(result => {
+            res.json(result)
+        })
+        .catch(err => {
+            res.status(400).json({
+                error: "No Bookmarks Found"
             })
-        }
-        res.json(bookmarks)
-    })
+        })
 }
 //CreateBookmark
 exports.CreateBookmark = (req,res) => {
     const bookmark = new Bookmark(req.body);
-    bookmark.save((err, bookmark) => {
-        if(err){
-            return res.status(400).json({
+    bookmark.save()
+        .then(result => {
+            res.json({bookmark})
+        })
+        .catch(err => {
+            res.status(400).json({
                 error: "Bookmark Creation Unsuccessful"
             })
-        }
-        res.json({bookmark})
-    })
+        })
 }
+    
 // Add another tag
 exports.addAnotherTag = (req, res) => {
     const id = req.params.bookmarkId
@@ -72,16 +76,19 @@ exports.RemoveTag = (req, res) => {
 //DeleteBookmark
 exports.DeleteBookmark = (req,res) => {
     const bookmark = req.bookmark;
-    bookmark.remove((err, bookmark) => {
-        if(err) {
-            return res.status(400).json({
-                error: "Bookmark Deletion Unsuccessful"
+    bookmark.remove()
+        .then(result => {
+            res.json({
+                message:"Bookmark Successfully Deleted"
             })
-        }
-        res.json({
-            message: "Bookmark Successfully Deleted"
         })
-    })
+        .catch(err => {
+            res.status(400).json({
+                      message: "Bookmark Deletion Unsuccessful",
+                      error: err
+           })
+        })
+
 }
 
 

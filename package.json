@@ -13,6 +13,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.9",
+    "mongoose-unix-timestamp": "^1.0.6",
     "nodemon": "^2.0.3",
     "uuid": "^7.0.3"
   }
