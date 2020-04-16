@@ -38,7 +38,7 @@ app.use('/api', bookmarkRoutes)
 app.use('/api', tagRoutes)
 
 //port
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 //server
 app.listen(port,() => {
     console.log(`app is running at ${port}`);
