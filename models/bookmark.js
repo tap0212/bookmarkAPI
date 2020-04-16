@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const {ObjectId} = mongoose.Schema;
 
 const bookmarkSchema = new mongoose.Schema({
     link: {
@@ -18,9 +17,9 @@ const bookmarkSchema = new mongoose.Schema({
         trim: true,
         required: true
     },
-    tags: [{
+    tags : [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Tag"
+        ref:"Tag"
     }]
 }, {timestamps: true})
 

@@ -1,5 +1,5 @@
+const Bookmark = require('../models/bookmark')
 const Tag = require('../models/tag')
-
 //  getTagById, getAllTags, CreateTag , DeleteTag
 //getTagById
 exports.getTagById = (req,res,next,id) => {

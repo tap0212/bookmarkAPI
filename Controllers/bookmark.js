@@ -37,6 +37,37 @@ exports.CreateBookmark = (req,res) => {
         res.json({bookmark})
     })
 }
+// Add another tag
+exports.addAnotherTag = (req, res) => {
+    const id = req.params.bookmarkId
+    Bookmark.findById(id)
+    .exec()
+    .then(result => {
+        const updatedTags = result.tags
+        updatedTags.push(req.params.tagId)
+        result.save()
+        res.json({result})
+    })
+    .catch(err => console.log(err))
+}
+
+// remove a tag
+exports.RemoveTag = (req, res) => {
+    Bookmark.findById(req.params.bookmarkId)
+    .exec()
+    .then(result => {
+        const remainingTags = result.tags
+        remainingTags.pop(req.params.tagId)
+        result.save()
+        res.status(201).json({
+            message: 'Tag removed successfully',
+            result
+        })
+    })
+    .catch(err => {
+        res.status(401).json({err})
+    })
+}
 
 //DeleteBookmark
 exports.DeleteBookmark = (req,res) => {
