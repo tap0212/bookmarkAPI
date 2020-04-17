@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>BookmarkAPI</title>
 </head>
 <body>
     <div class="jumbotron">
         <h1 class="text-center">BookmarkAPI</h1>
+        <div class="text-center" > 
+            <a  class="btn btn-secondary btn-sm mx-auto" style="width: 180px;padding:10px;" href="https://github.com/tap0212/bookmarkAPI" target="blank"><i class="fa fa-github-alt" style="color: black; font-size: 20px; " aria-hidden="true">Visit Github</i></a>
+        </div>
+        <div class="text-center" style="padding-top: 20px;">
+            <div class="postman-run-button p-l-4" 
+        data-postman-action="collection/import"
+        data-postman-var-1="0a0a8f75320d6094e0e8"></div>
+    <script type="text/javascript">
+        (function (p,o,s,t,m,a,n) {
+        !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+        !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
+        (n = o.createElement("script")),
+        (n.id = s+t), (n.async = 1), (n.src = m), n
+         ));
+        }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+    </script>
+    </div>
+        </div>
     </div>
     <div class="container">
         <h2>Functionalities Supported By This API</h2>
@@ -40,26 +59,16 @@
             <li>Display</li>
             <ul>
                 <li>Retrieve all bookmarks
-                    :   .../api/bookmarks
+                    <a href="http://ec2-3-6-89-251.ap-south-1.compute.amazonaws.com:3000/api/bookmarks" class="btn btn-sm btn-outline-danger">All Bookmarks</a>
                 </li>
                 <li>Retrieve all tags
-                    :    .../api/tags
+                    <a href="http://ec2-3-6-89-251.ap-south-1.compute.amazonaws.com:3000/api/tags" class="btn btn-sm btn-outline-danger ">All Tags</a>
+
                 </li>
             </ul>
         </ol>
     
-    <div class="postman-run-button p-l-4" 
-        data-postman-action="collection/import"
-        data-postman-var-1="0a0a8f75320d6094e0e8"></div>
-    <script type="text/javascript">
-        (function (p,o,s,t,m,a,n) {
-        !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
-        !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
-        (n = o.createElement("script")),
-        (n.id = s+t), (n.async = 1), (n.src = m), n
-         ));
-        }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
-    </script>
-    </div>
+    
+    <h6  class="text-center m-t-4 text-muted">Developed By : Tapan Awasthi</h6>
 </body>
 </html>
